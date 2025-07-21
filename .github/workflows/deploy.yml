@@ -21,14 +21,10 @@ jobs:
       - name: Checkout del repositorio
         uses: actions/checkout@v4
 
-      # OPCIONAL: Genera imágenes si tienes un script Python
-      # - name: Ejecutar script de generación de imágenes
-      #   run: python3 tu_script.py
-
       - name: Subir artefacto a GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .  # Cambia esto si tus archivos están en otra carpeta (como "docs")
+          path: resources  # Aquí tu carpeta con los archivos para publicar
 
   deploy:
     needs: build
